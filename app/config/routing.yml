@@ -1,0 +1,4 @@
+codersgroup_spending_registry:
+    resource: "@CodersgroupSpendingRegistryBundle/Resources/config/routing.yml"
+    prefix:   /
+
