@@ -1,0 +1,3 @@
+codersgroup_spending_registry_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CodersgroupSpendingRegistryBundle:Default:index }
