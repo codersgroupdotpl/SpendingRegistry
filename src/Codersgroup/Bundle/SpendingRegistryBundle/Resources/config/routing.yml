@@ -1,3 +1,15 @@
 codersgroup_spending_registry_homepage:
     path:     /hello/{name}
     defaults: { _controller: CodersgroupSpendingRegistryBundle:Default:index }
+
+CodersgroupSpendingRegistryBundle_unit:
+        resource: "@CodersgroupSpendingRegistryBundle/Resources/config/routing/unit.yml"
+        prefix:   /unit
+
+CodersgroupSpendingRegistryBundle_category:
+        resource: "@CodersgroupSpendingRegistryBundle/Resources/config/routing/category.yml"
+        prefix:   /category
+
+CodersgroupSpendingRegistryBundle_product:
+        resource: "@CodersgroupSpendingRegistryBundle/Resources/config/routing/product.yml"
+        prefix:   /product

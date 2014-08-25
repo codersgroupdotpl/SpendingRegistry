@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>{% trans %}Nowa jednostka miary{% endtrans %}</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('unit') }}">
+            {% trans %}Powrót do listy{% endtrans %}
+        </a>
+    </li>
+</ul>
+{% endblock %}

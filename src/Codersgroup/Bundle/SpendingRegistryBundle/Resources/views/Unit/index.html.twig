@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>{% trans %}Lista jednostek{% endtrans %}</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>{% trans %}Nazwa{% endtrans %}</th>
+                <th>{% trans %}Nazwa skrócona{% endtrans %}</th>
+                <th>{% trans %}Dodano{% endtrans %}</th>
+                <th>{% trans %}Modyfikowano{% endtrans %}</th>
+                <th>{% trans %}Akcje{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.shortName }}</td>
+                <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('unit_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+            <a href="{{ path('unit_new') }}" class="btn btn-default">
+                <i class="fa fa-plus"></i> {% trans %}Nowa jednostka{% endtrans %}
+            </a>
+    {% endblock %}
