@@ -5,11 +5,9 @@
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('product') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <br/>
+    <a href="{{ path('product') }}" class="btn btn-default">
+        {% trans %}Powrót do listy{% endtrans %}
+    </a>
+
 {% endblock %}

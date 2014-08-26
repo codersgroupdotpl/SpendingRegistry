@@ -15,8 +15,8 @@ class UnitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('shortName')
+            ->add('name', null, array('label' => 'Nazwa', 'attr' => array('class' => 'form-control')))
+            ->add('shortName', null, array('label' => 'Nazwa skrócona', 'attr' => array('class' => 'form-control')))
         ;
     }
     

@@ -16,15 +16,15 @@ class ProductType extends AbstractType
     {
         $builder
             ->add('name', null, array('label' => 'Nazwa', 'attr' => array('class' => 'form-control')))
-            ->add('description', null, array('attr' => array('class' => 'form-control')))
-            ->add('quantity', null, array('attr' => array('class' => 'form-control')))
-            ->add('vat', null, array('attr' => array('class' => 'form-control')))
-            ->add('netPrice', null, array('attr' => array('class' => 'form-control')))
-            ->add('grossPrice', null, array('attr' => array('class' => 'form-control')))
-            ->add('summaryGrossPrice', null, array('attr' => array('class' => 'form-control')))
-            ->add('purchaseDate', null)
-            ->add('category', null, array('attr' => array('class' => 'form-control')))
-            ->add('unit', null, array('attr' => array('class' => 'form-control')))
+            ->add('description', null, array('label' => 'Opis', 'attr' => array('class' => 'form-control')))
+            ->add('quantity', null, array('label' => 'Ilość', 'attr' => array('class' => 'form-control col-md-4')))
+            ->add('netPrice', null, array('label' => 'Cena netto', 'attr' => array('class' => 'form-control col-md-4')))
+	        ->add('vat', null, array('label' => 'Stawka VAT', 'attr' => array('class' => 'form-control col-md-4')))
+            ->add('grossPrice', null, array('label' => 'Cena brutto', 'attr' => array('class' => 'form-control col-md-4')))
+            ->add('summaryGrossPrice', null, array('label' => 'Całkowity koszt', 'attr' => array('class' => 'form-control col-md-4')))
+            ->add('purchaseDate', null, array('label' => 'Data zakupu', 'widget' => 'single_text', 'format' => 'd-M-y', 'attr' => array('class' => 'form-control col-md-4 datepicker')))
+            ->add('category', null, array('label' => 'Kategoria', 'attr' => array('label' => 'Kategoria', 'class' => 'form-control')))
+            ->add('unit', null, array('label' => 'Jednostka', 'attr' => array('class' => 'form-control')))
         ;
     }
     

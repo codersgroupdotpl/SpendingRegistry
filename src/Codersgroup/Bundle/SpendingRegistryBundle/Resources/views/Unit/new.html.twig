@@ -5,11 +5,8 @@
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('unit') }}">
-            {% trans %}Powrót do listy{% endtrans %}
-        </a>
-    </li>
-</ul>
+    <br/>
+    <a href="{{ path('unit') }}" class="btn btn-default">
+        {% trans %}Powrót do listy{% endtrans %}
+    </a>
 {% endblock %}

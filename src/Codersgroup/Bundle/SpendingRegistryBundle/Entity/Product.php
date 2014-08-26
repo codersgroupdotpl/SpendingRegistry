@@ -96,9 +96,9 @@ class Product
 	protected $summaryGrossPrice;
 
 	/**
-	 * @var datetime $purchaseDate
+	 * @var date $purchaseDate
 	 *
-	 * @ORM\Column(type="datetime")
+	 * @ORM\Column(type="date")
 	 */
 	protected $purchaseDate;
 

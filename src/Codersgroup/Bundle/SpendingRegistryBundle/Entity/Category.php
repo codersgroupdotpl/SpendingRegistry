@@ -300,4 +300,9 @@ class Category
     {
         return $this->deletedBy;
     }
+
+	public function __toString()
+	{
+		return $this->name;
+	}
 }

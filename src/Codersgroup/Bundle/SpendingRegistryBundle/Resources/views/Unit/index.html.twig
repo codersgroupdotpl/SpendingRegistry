@@ -23,7 +23,7 @@
                 <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                    <a href="{{ path('unit_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i></a>
+                    <a href="{{ path('unit_edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="top" title="{% trans %}Edycja{% endtrans %}"><i class="fa fa-edit"></i></a>
                 </td>
             </tr>
         {% endfor %}

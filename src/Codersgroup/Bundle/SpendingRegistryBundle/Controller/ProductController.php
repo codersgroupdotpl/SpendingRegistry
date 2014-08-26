@@ -67,7 +67,7 @@ class ProductController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => $this->get('translator')->trans('Zapisz'), 'attr'=>array('class' => 'btn btn-success pull-right')));
 
         return $form;
     }
@@ -147,7 +147,7 @@ class ProductController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => $this->get('translator')->trans('Zapisz'), 'attr'=>array('class' => 'btn btn-success pull-right')));
 
         return $form;
     }
@@ -217,7 +217,7 @@ class ProductController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('product_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => $this->get('translator')->trans('Usuń'), 'attr'=>array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

@@ -1,51 +1,40 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Category list</h1>
+    <h1>{% trans %}Kategorie wydatków{% endtrans %}</h1>
 
-    <table class="records_list">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Vat</th>
-                <th>Deleted</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
+                <th>{% trans %}Nazwa{% endtrans %}</th>
+                <th>{% trans %}Opis{% endtrans %}</th>
+                <th>{% trans %}VAT{% endtrans %}</th>
+                <th>{% trans %}Dodano{% endtrans %}</th>
+                <th>{% trans %}Modyfikowano{% endtrans %}</th>
+                <th>{% trans %}Akcje{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('category_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.id }}</td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.description }}</td>
                 <td>{{ entity.vat }}</td>
-                <td>{% if entity.deleted %}{{ entity.deleted|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('category_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('category_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a href="{{ path('category_show', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="top" title="{% trans %}Szczegóły{% endtrans %}"><i class="fa fa-info"></i></a>
+                    <a href="{{ path('category_edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="top" title="{% trans %}Edycja{% endtrans %}"><i class="fa fa-edit"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('category_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <a href="{{ path('category_new') }}" class="btn btn-default">
+        <i class="fa fa-plus"></i> {% trans %}Dodaj nową{% endtrans %}
+    </a>
+
+{% endblock %}
